@@ -1,0 +1,19 @@
+{
+  "name": "Stock Watch",
+  "version": "0.0",
+  "manifest_version": 2,
+  "description": "Watches a page for stock symbols.",
+  "background": {
+      "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+      "matches": ["http://*/*"],
+      "js": ["content.js"]
+  }],
+  "web_accessible_resources": ["data/companylist.csv"],
+  "permissions":  [
+      "tabs",
+      "http://*/*",
+      "https://*/*"
+  ]
+}
